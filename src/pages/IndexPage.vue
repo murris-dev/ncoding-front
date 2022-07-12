@@ -1,6 +1,15 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <q-card> </q-card>
+  <br />
+  <br />
+  <q-page class="row justify-evenly">
+    <q-card
+      v-for="course in courses"
+      :key="course.title"
+      class="col-4 my-card q-pa"
+    >
+      <div class="text-h6 text-center">{{ course.title }}</div>
+      <q-card-section> {{ course.description }} </q-card-section>
+    </q-card>
   </q-page>
 </template>
 
@@ -39,5 +48,40 @@ export default defineComponent({
     });
     return { todos, meta };
   },
+  data() {
+    return {
+      courses: [
+        {
+          title: 'java',
+          description: 'java is a course very importan for you.',
+        },
+        {
+          title: 'java',
+          description: 'java is a course very importan for you.',
+        },
+        {
+          title: 'java',
+          description: 'java is a course very importan for you.',
+        },
+        {
+          title: 'java',
+          description: 'java is a course very importan for you.',
+        },
+        {
+          title: 'java',
+          description: 'java is a course very importan for you.',
+        },
+        {
+          title: 'java',
+          description: 'java is a course very importan for you.',
+        },
+      ],
+    };
+  },
 });
 </script>
+
+<style lang="sass">
+.my-card
+  max-width: 250px
+</style>
