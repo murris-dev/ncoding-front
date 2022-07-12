@@ -12,6 +12,7 @@
         /> -->
 
         <q-toolbar-title class="text-blue"> ncoding </q-toolbar-title>
+        <q-btn label="login" class="bg-red" />
       </q-toolbar>
     </q-header>
 
@@ -30,12 +31,17 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+    <div>
+      <LoginComponent></LoginComponent>
+    </div>
   </q-layout>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+// import { defineComponent, ref } from 'vue';
+import { defineComponent } from 'vue';
 // import EssentialLink from 'components/EssentialLink.vue';
+import LoginComponent from 'components/LoginComponent.vue';
 
 const linksList = [
   {
@@ -51,17 +57,15 @@ export default defineComponent({
 
   components: {
     // EssentialLink,
+    LoginComponent,
   },
 
   setup() {
-    const leftDrawerOpen = ref(false);
+    // const leftDrawerOpen = ref(false);
 
     return {
       essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer() {
-        leftDrawerOpen.value = !leftDrawerOpen.value;
-      },
+      isLogin: true,
     };
   },
 });
