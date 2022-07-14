@@ -1,11 +1,13 @@
 <template>
   <br />
   <br />
-  <q-page class="row justify-evenly">
+  <q-page
+    class="full-width row wrap justify-center items-center content-center"
+  >
     <q-card
       v-for="course in courses"
       :key="course.title"
-      class="col-4 my-card q-pa"
+      class="col-4 my-card bg-cyan"
     >
       <div class="text-h6 text-center">{{ course.title }}</div>
       <q-card-section> {{ course.description }} </q-card-section>
@@ -53,7 +55,8 @@ export default defineComponent({
       courses: [
         {
           title: 'java',
-          description: 'java is a course very importan for you.',
+          description:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia omnis nam, facilis voluptates delectus recusandae ea doloremque reprehenderit deleniti neque fugiat voluptate velit praesentium voluptas minus ad tenetur suscipit amet.',
         },
         {
           title: 'java',
@@ -81,7 +84,13 @@ export default defineComponent({
 });
 </script>
 
-<style lang="sass">
-.my-card
-  max-width: 250px
+<style lang="css">
+.my-card {
+  overflow: auto;
+  min-height: 400px;
+  max-height: 400px;
+  min-width: 300px;
+  max-width: 300px;
+  padding: 30px;
+}
 </style>
